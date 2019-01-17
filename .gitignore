@@ -1,0 +1,16 @@
+#	Ignore debug
+debug/
+00/
+utdelt kode/
+
+#	Ignore .pdf
+*.pdf*
+
+#	ignore xcode
+*.xcodeproj
+#	ignore visual studio
+*.vcxproj*
+*.DS_Store
+*.sln
+*.vs*
+
