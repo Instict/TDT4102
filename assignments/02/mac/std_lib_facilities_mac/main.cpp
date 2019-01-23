@@ -87,7 +87,7 @@ void inputIntegersUsingLoopAndPrintSum() {
 	do {
 		user_input = inputInteger();
 		sum += user_input;
-	} while (!user_input == 0);
+	} while (!(user_input == 0));
 	cout << "Summen er: " << sum << endl;
 }
 
@@ -237,24 +237,24 @@ void awesomeMenuComingUp() {
 			inputIntegersAndPrintSum();
 		}
 		if (user_input == 2) {
-			system("CLS");
+			//system("CLS");
 			inputIntegersUsingLoopAndPrintSum();
 		}
 		if (user_input == 3) {
-			system("CLS");
+			//system("CLS");
 			convertFromNokToEuro();
 		}
 		if (user_input == 4) {
-			system("CLS");
+			//system("CLS");
 			cout << "Velkommen til gangetabellen!\n";
 			someKindOfTableComingUp();
 		}
 		if (user_input == 5) {
-			system("CLS");
+			//system("CLS");
 			solveQuadraticEquation();
 		}
 		if (user_input == 6) {
-			system("CLS");
+			//system("CLS");
 			whichIsCheaper();
 		}
 	} while (!(user_input == 0));

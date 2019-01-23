@@ -2,6 +2,7 @@
 debug/
 00/
 utdelt kode/
+Debug/
 
 #	Ignore .pdf
 *.pdf*
