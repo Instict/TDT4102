@@ -2,6 +2,8 @@
 #include "cannonball.h"
 #include "std_lib_facilities.h"
 #include <math.h>
+#include "utilities.h"
+
 
 //	part 1
 double acclY() {
@@ -104,5 +106,37 @@ double getDistanceTraveled(double velocityX, double velocityY) {
 }
 
 double targetPractice(double distanceToTarget, double velocityX, double velocityY) {
-	return distanceToTarget - getDistanceTraveled(velocityX, velocityY);
+	return getDistanceTraveled(velocityX, velocityY) - distanceToTarget;
+}
+void playTargetPractice(int min, int maks, int iterations) {
+	double theta, absVelocity;
+	double velocityX, velocityY;
+	int winner = 0;
+	int target;
+	target = randomWithLimits(maks, min);
+	cout << "Target at: " << target << " meters" << endl;
+	for (int i = iterations; i > 0; i--) {
+		cout << i << " tries remaining" << endl;
+		getUserInput(theta, absVelocity);
+		getVelocityVector(theta, absVelocity, velocityX, velocityY);
+		double velocityVector = sqrt(pow(velocityX, 2) + pow(velocityY, 2));
+		cout << "Flight time: " << setprecision(2) << flightTime(velocityY) << " seconds" << endl;
+		cout << "Target : " << target << " meters" << endl;
+		cout << "You hit: " << setprecision(4) << getDistanceTraveled(velocityX, velocityY) << " meters" << endl;
+		if (abs(targetPractice(target, velocityX, velocityY)) < 6) {
+			cout << setprecision(2) << "HIT! HIT! " << abs(targetPractice(target, velocityX, velocityY)) << " meters hits the target!" << endl;
+			cout << "Congratulation! You beat the game in " << iterations - i + 1 << " tries!" << endl;
+			winner = 1;
+			break;
+		}
+		else if (targetPractice(target, velocityX, velocityY) > 0) {
+			cout << setprecision(4) << abs(targetPractice(target, velocityX, velocityY)) << " meters to far!" << endl;
+		}
+		else if (targetPractice(target, velocityX, velocityY) < 0) {
+			cout << setprecision(4) << abs(targetPractice(target, velocityX, velocityY)) << " meters to short!" << endl;
+		}
+	}
+	if (winner == 0) {
+		cout << "You lost, lol" << endl;
+	}
 }
