@@ -15,3 +15,6 @@ double degToRad(double deg);
 double getVelocityX(double theta, double absVelocity);
 double getVelocityY(double theta, double absVelocity);
 void getVelocityVector(double theta, double absVelocity, double& velocityX, double& velocityY);
+double getDistanceTraveled(double velocityX, double velocityY);
+double targetPractice(double distanceToTarget, double velocityX, double velocityY);
+void playTargetPractice(int min, int maks, int iterations);

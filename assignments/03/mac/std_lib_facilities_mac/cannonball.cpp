@@ -2,6 +2,8 @@
 #include "cannonball.h"
 #include "std_lib_facilities.h"
 #include <math.h>
+#include "utilities.h"
+
 
 //	part 1
 double acclY() {
@@ -69,7 +71,12 @@ double flightTime(double initVelocityY) {
 // Formålet er å endre verdien på argumentene.
 // theta og absVelocity er referanser til objektene funksjonen kalles med.
 void getUserInput(double& theta, double& absVelocity) {
-	//	do something here?
+	cout << "angle(degrees): ";
+	cin >> theta;
+	cout << "velocity: ";
+	cin >> absVelocity;
+	theta = degToRad(theta);
+	cout << endl;
 }
 
 // Konverterer fra grader til radianer
@@ -90,15 +97,46 @@ double getVelocityY(double theta, double absVelocity) {
 // gitt vinkelen theta. Komponentene oppdateres gjennom referansene.
 // med Vector i funksjonsnavnet tenker vi på vektor-begrepet i geometri
 void getVelocityVector(double theta, double absVelocity, double& velocityX, double& velocityY) {
-	// do something here
+	velocityX = getVelocityX(theta, absVelocity);
+	velocityY = getVelocityX(theta, absVelocity);
 }
 
 double getDistanceTraveled(double velocityX, double velocityY) {
-	//	do something here
-	return NULL;
+	return posX(0, velocityX, flightTime(velocityY));
 }
 
 double targetPractice(double distanceToTarget, double velocityX, double velocityY) {
-	//	do something here
-	return NULL;
+	return getDistanceTraveled(velocityX, velocityY) - distanceToTarget;
+}
+void playTargetPractice(int min, int maks, int iterations) {
+	double theta, absVelocity;
+	double velocityX, velocityY;
+	int winner = 0;
+	int target;
+	target = randomWithLimits(maks, min);
+	cout << "Target at: " << target << " meters" << endl;
+	for (int i = iterations; i > 0; i--) {
+		cout << i << " tries remaining" << endl;
+		getUserInput(theta, absVelocity);
+		getVelocityVector(theta, absVelocity, velocityX, velocityY);
+		double velocityVector = sqrt(pow(velocityX, 2) + pow(velocityY, 2));
+		cout << "Flight time: " << setprecision(2) << flightTime(velocityY) << " seconds" << endl;
+		cout << "Target : " << target << " meters" << endl;
+		cout << "You hit: " << setprecision(4) << getDistanceTraveled(velocityX, velocityY) << " meters" << endl;
+		if (abs(targetPractice(target, velocityX, velocityY)) < 6) {
+			cout << setprecision(2) << "HIT! HIT! " << abs(targetPractice(target, velocityX, velocityY)) << " meters hits the target!" << endl;
+			cout << "Congratulation! You beat the game in " << iterations - i + 1 << " tries!" << endl;
+			winner = 1;
+			break;
+		}
+		else if (targetPractice(target, velocityX, velocityY) > 0) {
+			cout << setprecision(4) << abs(targetPractice(target, velocityX, velocityY)) << " meters to far!" << endl;
+		}
+		else if (targetPractice(target, velocityX, velocityY) < 0) {
+			cout << setprecision(4) << abs(targetPractice(target, velocityX, velocityY)) << " meters to short!" << endl;
+		}
+	}
+	if (winner == 0) {
+		cout << "You lost, lol" << endl;
+	}
 }
