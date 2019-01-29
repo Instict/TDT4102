@@ -69,7 +69,12 @@ double flightTime(double initVelocityY) {
 // Formålet er å endre verdien på argumentene.
 // theta og absVelocity er referanser til objektene funksjonen kalles med.
 void getUserInput(double& theta, double& absVelocity) {
-	//	do something here?
+	cout << "angle(degrees): ";
+	cin >> theta;
+	cout << "velocity: ";
+	cin >> absVelocity;
+	theta = degToRad(theta);
+	cout << endl;
 }
 
 // Konverterer fra grader til radianer
@@ -90,15 +95,14 @@ double getVelocityY(double theta, double absVelocity) {
 // gitt vinkelen theta. Komponentene oppdateres gjennom referansene.
 // med Vector i funksjonsnavnet tenker vi på vektor-begrepet i geometri
 void getVelocityVector(double theta, double absVelocity, double& velocityX, double& velocityY) {
-	// do something here
+	velocityX = getVelocityX(theta, absVelocity);
+	velocityY = getVelocityX(theta, absVelocity);
 }
 
 double getDistanceTraveled(double velocityX, double velocityY) {
-	//	do something here
-	return NULL;
+	return posX(0, velocityX, flightTime(velocityY));
 }
 
 double targetPractice(double distanceToTarget, double velocityX, double velocityY) {
-	//	do something here
-	return NULL;
+	return distanceToTarget - getDistanceTraveled(velocityX, velocityY);
 }
