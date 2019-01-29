@@ -1,10 +1,10 @@
 #include "std_lib_facilities.h"
+#include "utilities.h"
+#include "menu.h"
+#include "tests.h"
 
-int main(){
 
-	// Your code here
-	for (int i = 0; i < 10; i++) {
-		cout << i << " Hello world!" << endl;
-	}
-	return 0;
+int main() {
+
+	awesomeMenuComingUp();
 }
