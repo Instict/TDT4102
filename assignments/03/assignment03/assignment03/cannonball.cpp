@@ -98,7 +98,7 @@ double getVelocityY(double theta, double absVelocity) {
 // med Vector i funksjonsnavnet tenker vi på vektor-begrepet i geometri
 void getVelocityVector(double theta, double absVelocity, double& velocityX, double& velocityY) {
 	velocityX = getVelocityX(theta, absVelocity);
-	velocityY = getVelocityX(theta, absVelocity);
+	velocityY = getVelocityY(theta, absVelocity);
 }
 
 double getDistanceTraveled(double velocityX, double velocityY) {
