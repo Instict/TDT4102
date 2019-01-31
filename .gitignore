@@ -7,6 +7,9 @@ Debug/
 #	Ignore .pdf
 *.pdf*
 
+#	ignore .zip
+*.zip
+
 #	ignore xcode
 *.xcodeproj
 #	ignore visual studio
