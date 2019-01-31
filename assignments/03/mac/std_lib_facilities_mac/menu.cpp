@@ -21,5 +21,5 @@ void awesomeMenuComingUp() {
 		case 3: cout << endl; part03(); cout << endl; break;
 		}
 	
-	} while (!user_input == 0);
+	} while (!(user_input == 0));
 }
