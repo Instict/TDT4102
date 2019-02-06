@@ -2,7 +2,6 @@
 #include "utilities.h"
 
 
-
 int randomWithLimits(int maks, int min) {
 	return (rand() % (maks - min + 1) + min);
 }
@@ -82,4 +81,71 @@ bool isEven(int heltall) {
 	else {
 		return false;
 	}
+}
+
+string randomizeString(int sizeOfThisThingy, int max, int min) {
+	string dummyVariable;
+	for (int i = 0; i < sizeOfThisThingy; i++) {
+		dummyVariable.push_back(randomWithLimits(max, min));
+	}
+	return dummyVariable;
+}
+
+
+/*
+This function was kinda confusing, what do they really want me to do here?
+##	WORK IN PROGRESS	##
+*/
+string readInputToString(int nLength) {
+	/*
+	return string
+	max length n
+	maxima constraint
+	low constraint
+	use cin >>
+	check if alpha
+
+	*/
+	string thisString;
+	cout << "Maximum " << nLength << " characters" << endl;
+	cout << "Userinput: ";
+	cin >> thisString;
+	cout << endl;
+	for (int i = 0; i < nLength; i++) {
+		if (isalpha(thisString[i])) {
+			cout << "isAlpha: " << thisString[i] << endl;
+		}
+		else if(isdigit(thisString[i])){
+			cout << "isDigit: " << thisString[i] << endl;
+		}
+	}
+	for (char& dummy : thisString) {
+		dummy = toupper(dummy);
+	}
+	cout << "This string: " << thisString << endl;
+
+
+	return thisString;
+}
+
+int countChar(string thisIsTheString, char thisIsTheChar) {
+	int counter = 0;
+	for (int i = 0; i < thisIsTheString.size();i++) {
+		if ((tolower(thisIsTheString[i]) == thisIsTheChar) || (toupper(thisIsTheString[i]) == thisIsTheChar)) {
+			counter++;
+		}
+	}
+	return counter;
+}
+
+double averageGrading(string stringOfStuff, int letterA, int letterF) {
+	int dummyCounter = 0;
+	double averageGrade = 0.0;
+	cout << stringOfStuff << endl;
+	for (char firstChar = letterA; firstChar <= letterF; firstChar++) {
+		cout << firstChar << " : " << countChar(stringOfStuff, firstChar) << " time(s)" << endl;
+		averageGrade += countChar(stringOfStuff, firstChar)*(5 - dummyCounter);
+		dummyCounter++;
+	}
+	return averageGrade / dummyCounter;
 }

@@ -15,7 +15,7 @@ void awesomeMenuComingUp() {
 			"1)Part 1 - pass-by-reference\n"
 			"2)Part 2 - vector<int>\n"
 			"3)Part 3 - sortering\n"
-			"4)string\n"
+			"4)Part 4 - String and char\n"
 			"5)mastermind\n"
 			"6)mastermind med grafikk\n"
 			"Angi valg (0-6): ";
@@ -24,12 +24,12 @@ void awesomeMenuComingUp() {
 		case 1: cout << endl; part01(); cout << endl; break;
 		case 2: cout << endl; part02(); cout << endl; break;
 		case 3: cout << endl; part03(); cout << endl; break;
-		case 4: cout << endl; cout << "part 4"; cout << endl; break;
+		case 4: cout << endl; part04(); cout << endl; break;
 		case 5: cout << endl; cout << "part 5"; cout << endl; break;
 		case 6: cout << endl; cout << "part 6"; cout << endl; break;
 		}
 
-	} while (!user_input == 0);
+	} while (!(user_input == 0));
 }
 
 void part01() {
@@ -48,7 +48,7 @@ void part01() {
 		case 3: cout << endl; testswapNumbers(); cout << endl; break;
 		}
 
-	} while (!user_input == 0);
+	} while (!(user_input == 0));
 }
 
 void part02() {
@@ -63,7 +63,7 @@ void part02() {
 		case 1: cout << endl; testVectorSorting(); cout << endl; break;
 		}
 
-	} while (!user_input == 0);
+	} while (!(user_input == 0));
 }
 
 void part03() {
@@ -78,5 +78,22 @@ void part03() {
 		case 1: cout << endl; testVectorSorting(); cout << endl; break;
 		}
 
-	} while (!user_input == 0);
+	} while (!(user_input == 0));
+}
+
+void part04() {
+	int user_input;
+	do {
+		cout << "\nString and char:\n"
+			"0)...\n"
+			"1)testString()\n"
+			"2)testForCharInString()\n"
+			"Angi valg (0-2): ";
+		cin >> user_input;
+		switch (user_input) {
+		case 1: cout << endl; testString(); cout << endl; break;
+		case 2: cout << endl; testForCharInString(); cout << endl; break;
+		}
+
+	} while (!(user_input == 0));
 }

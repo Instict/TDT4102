@@ -11,10 +11,8 @@ void getIntFromUser(int& numbers);
 void sortVector(vector<int>& sortThisVector);
 int medianOfVector(vector<int> medianThingOfThisThingy);
 bool isEven(int heltall);
+string randomizeString(int sizeOfThisThingy, int max, int min);
+string readInputToString(int nLength);
+int countChar(string thisIsTheString, char thisIsTheChar);
 
-/*
-Lag en ny funksjon incrementByValueNumTimesRef(), som gjør akkurat det samme som 
-incrementByValueNumTimes(), men bruker referanse. Funksjonen skal ikke returnere noe. 
-Lag en ny funksjon testCallByReference() som tester incrementByValueNumTimesRef() på 
-tilsvarende måte som testCallByValue() tester incrementByValueNumTimes(). 
-*/
+double averageGrading(string stringOfStuff, int letterA, int letterF);
