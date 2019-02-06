@@ -50,13 +50,6 @@ void testVectorSorting() {
 		cout << i << " : " << percentages[i] << endl;
 	}
 	cout << "Median of: " << medianOfVector(percentages) << endl;
-	/*
-	cout << "Swap first two numbers" << endl;
-	swapNumbers(percentages[0], percentages[1]);
-	for (int i = 0; i < 2; i++) {
-		cout << i << " : " << percentages[i] << endl;
-	}
-	*/
 	sortVector(percentages);
 	for (int i = 0; i < iterations; i++) {
 		cout << i << " : " << percentages[i] << endl;
@@ -71,13 +64,17 @@ void testString() {
 	//	A-F = 65-70
 	int letterA = 65;
 	int letterF = 70;
-	int iterations = 8;
+	int iterations;
+
+	cout << "Number of students: ";
+	getIntFromUser(iterations);
+	cout << endl;
 	grades = randomizeString(iterations, letterF, letterA);
 	for (int i = 0; i < grades.size(); i++) {
 		cout << i << " : " << grades[i] << endl;
 	}
 
-	cout << setprecision(2) << "average grade is: " << averageGrading(grades, letterA, letterF) << endl;
+	cout << setprecision(2) << "average grade is: " << averageGrading(grades, letterA, letterF, iterations) << endl;
 }
 
 /*

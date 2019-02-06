@@ -16,8 +16,8 @@ void awesomeMenuComingUp() {
 			"2)Part 2 - vector<int>\n"
 			"3)Part 3 - sortering\n"
 			"4)Part 4 - String and char\n"
-			"5)mastermind\n"
-			"6)mastermind med grafikk\n"
+			"5)mastermind - WIP\n"
+			"6)mastermind med grafikk - WIP\n"
 			"Angi valg (0-6): ";
 		cin >> user_input;
 		switch (user_input) {
@@ -86,8 +86,8 @@ void part04() {
 	do {
 		cout << "\nString and char:\n"
 			"0)...\n"
-			"1)testString()\n"
-			"2)testForCharInString()\n"
+			"1)random grades - testString()\n"
+			"2)count char - testForCharInString()\n"
 			"Angi valg (0-2): ";
 		cin >> user_input;
 		switch (user_input) {

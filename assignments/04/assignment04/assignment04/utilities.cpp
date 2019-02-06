@@ -54,6 +54,7 @@ Implementation of insertion-sort algorithm
 void sortVector(vector<int>& sortThisVector) {
 	int i = 1;
 	int j;
+	cout << "Insertion-sort" << endl;
 	while (i < sortThisVector.size()) {
 		j = i;
 		while (j > 0 && sortThisVector[j - 1] > sortThisVector[j]) {
@@ -138,7 +139,7 @@ int countChar(string thisIsTheString, char thisIsTheChar) {
 	return counter;
 }
 
-double averageGrading(string stringOfStuff, int letterA, int letterF) {
+double averageGrading(string stringOfStuff, int letterA, int letterF, int iterations) {
 	int dummyCounter = 0;
 	double averageGrade = 0.0;
 	cout << stringOfStuff << endl;
@@ -147,5 +148,5 @@ double averageGrading(string stringOfStuff, int letterA, int letterF) {
 		averageGrade += countChar(stringOfStuff, firstChar)*(5 - dummyCounter);
 		dummyCounter++;
 	}
-	return averageGrade / dummyCounter;
+	return averageGrade / iterations;
 }
