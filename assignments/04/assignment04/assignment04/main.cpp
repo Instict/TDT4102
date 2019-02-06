@@ -7,4 +7,8 @@
 int main() {
 
 	awesomeMenuComingUp();
+
+	/*
+	testVectorString() should be called from main, why?
+	*/
 }
