@@ -14,7 +14,7 @@ void awesomeMenuComingUp() {
 			"0)Avslutt\n"
 			"1)Part 1 - pass-by-reference\n"
 			"2)Part 2 - vector<int>\n"
-			"3)swap\n"
+			"3)Part 3 - sortering\n"
 			"4)string\n"
 			"5)mastermind\n"
 			"6)mastermind med grafikk\n"
@@ -23,7 +23,7 @@ void awesomeMenuComingUp() {
 		switch (user_input) {
 		case 1: cout << endl; part01(); cout << endl; break;
 		case 2: cout << endl; part02(); cout << endl; break;
-		case 3: cout << endl; testswapNumbers(); cout << endl; break;
+		case 3: cout << endl; part03(); cout << endl; break;
 		case 4: cout << endl; cout << "part 4"; cout << endl; break;
 		case 5: cout << endl; cout << "part 5"; cout << endl; break;
 		case 6: cout << endl; cout << "part 6"; cout << endl; break;
@@ -57,14 +57,25 @@ void part02() {
 		cout << "\nvector<int>:\n"
 			"0)...\n"
 			"1)testVectorSorting()\n"
-			"2).\n"
-			"3).\n"
-			"Angi valg (0-3): ";
+			"Angi valg (0-1): ";
 		cin >> user_input;
 		switch (user_input) {
 		case 1: cout << endl; testVectorSorting(); cout << endl; break;
-		case 2: cout << endl; testCallByReference(); cout << endl; break;
-		case 3: cout << endl; testswapNumbers(); cout << endl; break;
+		}
+
+	} while (!user_input == 0);
+}
+
+void part03() {
+	int user_input;
+	do {
+		cout << "\nsortering:\n"
+			"0)...\n"
+			"1)testVectorSorting()\n"
+			"Angi valg (0-1): ";
+		cin >> user_input;
+		switch (user_input) {
+		case 1: cout << endl; testVectorSorting(); cout << endl; break;
 		}
 
 	} while (!user_input == 0);

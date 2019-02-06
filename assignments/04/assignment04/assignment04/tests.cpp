@@ -2,6 +2,10 @@
 #include "utilities.h"
 #include "std_lib_facilities.h"
 
+/*
+Adding test functions seems like a decent way to show the assignment
+*/
+
 void testCallByValue() {
 	int v0 = 5;
 	int increment = 2;
@@ -38,4 +42,24 @@ void testswapNumbers() {
 void testVectorSorting() {
 	cout << "testVectorSorting" << endl;
 	vector<int> percentages;
+	int iterations;
+	cout << "Generer tall(antall: ";
+	getIntFromUser(iterations);
+	randomizeVector(percentages, iterations);
+	for (int i = 0; i < iterations; i++) {
+		cout << i << " : " << percentages[i] << endl;
+	}
+	cout << "Median of: " << medianOfVector(percentages) << endl;
+	/*
+	cout << "Swap first two numbers" << endl;
+	swapNumbers(percentages[0], percentages[1]);
+	for (int i = 0; i < 2; i++) {
+		cout << i << " : " << percentages[i] << endl;
+	}
+	*/
+	sortVector(percentages);
+	for (int i = 0; i < iterations; i++) {
+		cout << i << " : " << percentages[i] << endl;
+	}
+	cout << "Median of: " << medianOfVector(percentages) << endl;
 }

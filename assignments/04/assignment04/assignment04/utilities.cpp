@@ -36,6 +36,50 @@ void swapNumbers(int& firstNum, int& secondNum) {
 }
 
 
-vector<int> randomizeVector() {
+void randomizeVector(vector<int>& vectorInt, int n) {
+	int max = 100;
+	int min = 0;
+	for (int i = 0; i < n; i++) {
+		vectorInt.push_back(randomWithLimits(max, min));
+	}
+}
 
+void getIntFromUser(int& inFromUser) {
+	cin >> inFromUser;
+	cout << endl;
+}
+
+/*
+Implementation of insertion-sort algorithm
+*/
+void sortVector(vector<int>& sortThisVector) {
+	int i = 1;
+	int j;
+	while (i < sortThisVector.size()) {
+		j = i;
+		while (j > 0 && sortThisVector[j - 1] > sortThisVector[j]) {
+			swapNumbers(sortThisVector[j], sortThisVector[j - 1]);
+				j -= 1;
+		}
+		i += 1;
+	}
+}
+
+int medianOfVector(vector<int> medianThingOfThisThingy) {
+	if (isEven(medianThingOfThisThingy.size())) {
+		int k = medianThingOfThisThingy.size() / 2;
+		return (medianThingOfThisThingy[k] + medianThingOfThisThingy[k - 1]) / 2;
+	}
+	else {
+		return medianThingOfThisThingy[medianThingOfThisThingy.size() / 2];
+	}
+}
+
+bool isEven(int heltall) {
+	if (heltall % 2 == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

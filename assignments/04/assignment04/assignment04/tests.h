@@ -3,3 +3,4 @@
 void testCallByValue();
 void testCallByReference();
 void testswapNumbers();
+void testVectorSorting();
