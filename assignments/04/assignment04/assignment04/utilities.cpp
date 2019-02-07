@@ -98,21 +98,14 @@ This function was kinda confusing, what do they really want me to do here?
 ##	WORK IN PROGRESS	##
 */
 string readInputToString(int nLength) {
-	/*
-	return string
-	max length n
-	maxima constraint
-	low constraint
-	use cin >>
-	check if alpha
-
-	*/
 	string thisString;
-	cout << "Maximum " << nLength << " characters" << endl;
-	cout << "Userinput: ";
-	cin >> thisString;
-	cout << endl;
-	for (int i = 0; i < nLength; i++) {
+	do {
+		cout << "Maximum " << nLength << " characters" << endl;
+		cout << "Userinput: ";
+		cin >> thisString;
+		cout << endl;
+	} while (!(thisString.size() == nLength));
+	/*for (int i = 0; i < nLength; i++) {
 		if (isalpha(thisString[i])) {
 			cout << "isAlpha: " << thisString[i] << endl;
 		}
@@ -123,10 +116,9 @@ string readInputToString(int nLength) {
 	for (char& dummy : thisString) {
 		dummy = toupper(dummy);
 	}
-	cout << "This string: " << thisString << endl;
+	*/
 
-
-	return thisString;
+	return thisString.substr(0, nLength);
 }
 
 int countChar(string thisIsTheString, char thisIsTheChar) {
@@ -136,6 +128,7 @@ int countChar(string thisIsTheString, char thisIsTheChar) {
 			counter++;
 		}
 	}
+	//cout << "countChar: " << counter << endl;
 	return counter;
 }
 
@@ -149,4 +142,29 @@ double averageGrading(string stringOfStuff, int letterA, int letterF, int iterat
 		dummyCounter++;
 	}
 	return averageGrade / iterations;
+}
+
+int checkCharacters(string firstString, string secondString) {
+	int counter = 0;
+	for (int i = 0; i < firstString.size(); i++) {
+		if (firstString[i] == secondString[i]) {
+			counter++;
+		}
+	}
+	return counter;
+}
+
+/*
+This function is not working properly. Sometimes it works, sometimes it return too many results.
+###	Need to rewrite this function before delivery	###
+*/
+int checkCharactersAndPosition(string firstString, string secondString) {
+	int counter = 0;
+	for (int i = 0; i < firstString.size(); i++) {
+		if (countChar(firstString, secondString[i]) > 0) {
+			//cout << "first: " << firstString << " second: " << secondString[i] << endl;
+			counter++;
+		}
+	}
+	return counter;
 }

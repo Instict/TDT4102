@@ -14,5 +14,6 @@ bool isEven(int heltall);
 string randomizeString(int sizeOfThisThingy, int max, int min);
 string readInputToString(int nLength);
 int countChar(string thisIsTheString, char thisIsTheChar);
-
 double averageGrading(string stringOfStuff, int letterA, int letterF, int iterations);
+int checkCharacters(string firstString, string secondString);
+int checkCharactersAndPosition(string firstString, string secondString);
