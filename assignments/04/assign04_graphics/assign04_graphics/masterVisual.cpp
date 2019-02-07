@@ -1,5 +1,4 @@
 #include "masterVisual.h"
-
 #include "std_lib_facilities.h"
 #include "Graph.h"
 #include "Simple_window.h"
@@ -52,19 +51,20 @@ void hideCode(MastermindWindow& mwin, int size)
 // correctCharacter: hvor mange bokstaver er riktige, uavhangig av posisjon?
 void addFeedback(MastermindWindow& mwin, const int correctPosition, const int correctCharacter, const int size, const int round)
 {
-	const int centerY = 0; // Regn ut sirklenes y-koordinat (sentrum)
+	const int centerY = 25 + static_cast<int>(((round * guessHeight) + vRoomAboveGuess) * mwin.y_max()); // Regn ut sirklenes y-koordinat (sentrum)
 	for (int i = 0; i < size; ++i) {
-		const int centerX = 0; // Regn ut sirkelens x-koordinat (sentrum)
+		const int centerX = 260+static_cast<int>((roomAroundGuess + (i * (guessDisplay_w / size))) * mwin.x_max())/3;; // Regn ut sirkelens x-koordinat (sentrum)
 
 		mwin.vc.push_back(new Circle{ Point{centerX, centerY}, 8 });
-
 		if (i < correctPosition) {
+			mwin.vc[mwin.vc.size() - 1].set_fill_color(Color::black);
 			// Sett farge for korrekt plassering
 		}
 		else if (i < (correctPosition + max(0, correctCharacter - correctPosition))) {
+			mwin.vc[mwin.vc.size() - 1].set_fill_color(Color::white);
 			// Sett farge for korrekt bokstav, men feil plassering
 		}
-
+		mwin.attach(mwin.vc[mwin.vc.size() - 1]);
 		// Koble sirkelen til vinduet (attach)
 
 	}
