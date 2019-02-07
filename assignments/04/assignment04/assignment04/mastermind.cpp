@@ -7,24 +7,28 @@
 void playMastermind() {
 	constexpr int size = 4;
 	constexpr int letters = 6;
+
+
 	string code;
 	string guess;
-	int tries = 2;
-	
+	int tries = 10;
+	do {
 	code = randomizeString(size, 'A' + (letters - 1), 'A');
-	//code = "DDBA";
+	//code = "BEEE";
 
-	
 	cout << endl;
 	cout << "code: ";
 	for (int i = 0; i < code.size(); i++) {
 		cout << code[i];
 	}
 
-	do{
+
+	
+
 		cout << endl;
 		cout << "You have " << tries << " tries left!" << endl;
 		guess = readInputToString(size);
+		//guess = "BBBB";	//	####	BUILD ONLY		####
 		cout << "guess: ";
 		for (int i = 0; i < guess.size(); i++) {
 			cout << guess[i];
@@ -33,6 +37,7 @@ void playMastermind() {
 		cout << "correct spot: " << checkCharacters(code, guess) << endl;
 		cout << "correct color: " << checkCharactersAndPosition(code, guess) << endl;
 		tries--;
+
 	} while (checkCharacters(code, guess) < code.size() && tries > 0);
 	if (checkCharacters(code, guess) == code.size()) {
 		cout << "You won!" << endl;
@@ -40,4 +45,5 @@ void playMastermind() {
 	else {
 		cout << "You lost!" << endl;
 	}
+
 }

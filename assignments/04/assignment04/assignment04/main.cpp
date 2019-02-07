@@ -4,15 +4,11 @@
 #include "tests.h"
 #include "mastermind.h"
 
-
 int main() {
 	srand(static_cast<unsigned int>(time(nullptr)));
+	playMastermind();
+	//awesomeMenuComingUp();
 
-	awesomeMenuComingUp();
-	//testError(min, maks, iterations);
-	//testString();
-	//readInputToString(4);
-	//testForCharInString();
 	/*
 	testVectorString() should be called from main, why?
 	*/

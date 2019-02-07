@@ -14,19 +14,13 @@ int incrementByValueNumTimes(int startValue, int increment, int numTimes) {
 }
 
 
-void incrementByValueNumTimesRef(int& startValue, int& increment, int& numTimes){
+void incrementByValueNumTimesRef(int& startValue, int& increment, int& numTimes) {
 	for (int i = 0; i < numTimes; i++) {
 		startValue += increment;
 	}
 }
 
-/*
-Probably need to tune this function. The solution does not seem to be right, even
-if I seem to find the correct values. Probably a better way to do this.
-## FIND AN ALTERNATIVE WAY TO DO THIS FUNCTION ##
-Using reference is probably better, since this function should not return any values.
-Probably better to change the value of the variables instead of just copying them.
-*/
+
 void swapNumbers(int& firstNum, int& secondNum) {
 	int thisFirst = firstNum;
 	int thisSecond = secondNum;
@@ -59,7 +53,7 @@ void sortVector(vector<int>& sortThisVector) {
 		j = i;
 		while (j > 0 && sortThisVector[j - 1] > sortThisVector[j]) {
 			swapNumbers(sortThisVector[j], sortThisVector[j - 1]);
-				j -= 1;
+			j -= 1;
 		}
 		i += 1;
 	}
@@ -93,10 +87,7 @@ string randomizeString(int sizeOfThisThingy, int max, int min) {
 }
 
 
-/*
-This function was kinda confusing, what do they really want me to do here?
-##	WORK IN PROGRESS	##
-*/
+
 string readInputToString(int nLength) {
 	string thisString;
 	do {
@@ -123,12 +114,13 @@ string readInputToString(int nLength) {
 
 int countChar(string thisIsTheString, char thisIsTheChar) {
 	int counter = 0;
-	for (int i = 0; i < thisIsTheString.size();i++) {
+	for (int i = 0; i < thisIsTheString.size(); i++) {
 		if ((tolower(thisIsTheString[i]) == thisIsTheChar) || (toupper(thisIsTheString[i]) == thisIsTheChar)) {
 			counter++;
 		}
 	}
-	//cout << "countChar: " << counter << endl;
+
+	//cout << "countChar: " << thisIsTheString << " : " << thisIsTheChar << " : " << counter << endl;
 	return counter;
 }
 
@@ -162,8 +154,8 @@ This function is not working properly. Sometimes it works, sometimes it return t
 int checkCharactersAndPosition(string firstString, string secondString) {
 	int counter = 0;
 	for (int i = 0; i < firstString.size(); i++) {
-		if (countChar(firstString, secondString[i]) > 0) {
-			//cout << "first: " << firstString << " second: " << secondString[i] << endl;
+		if (countChar(secondString, firstString[i]) > 0) {
+			//cout << "first: " << firstString[i] << " second: " << secondString << endl;
 			counter++;
 		}
 	}

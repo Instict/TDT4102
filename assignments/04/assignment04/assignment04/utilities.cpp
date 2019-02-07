@@ -20,13 +20,7 @@ void incrementByValueNumTimesRef(int& startValue, int& increment, int& numTimes)
 	}
 }
 
-/*
-Probably need to tune this function. The solution does not seem to be right, even
-if I seem to find the correct values. Probably a better way to do this.
-## FIND AN ALTERNATIVE WAY TO DO THIS FUNCTION ##
-Using reference is probably better, since this function should not return any values.
-Probably better to change the value of the variables instead of just copying them.
-*/
+
 void swapNumbers(int& firstNum, int& secondNum) {
 	int thisFirst = firstNum;
 	int thisSecond = secondNum;
@@ -93,10 +87,7 @@ string randomizeString(int sizeOfThisThingy, int max, int min) {
 }
 
 
-/*
-This function was kinda confusing, what do they really want me to do here?
-##	WORK IN PROGRESS	##
-*/
+
 string readInputToString(int nLength) {
 	string thisString;
 	do {
@@ -128,7 +119,8 @@ int countChar(string thisIsTheString, char thisIsTheChar) {
 			counter++;
 		}
 	}
-	//cout << "countChar: " << counter << endl;
+
+	cout << "countChar: " << thisIsTheString << " : " << thisIsTheChar << " : " << counter << endl;
 	return counter;
 }
 
@@ -155,14 +147,15 @@ int checkCharacters(string firstString, string secondString) {
 }
 
 /*
+###	TODO-list	###
 This function is not working properly. Sometimes it works, sometimes it return too many results.
 ###	Need to rewrite this function before delivery	###
 */
 int checkCharactersAndPosition(string firstString, string secondString) {
 	int counter = 0;
 	for (int i = 0; i < firstString.size(); i++) {
-		if (countChar(firstString, secondString[i]) > 0) {
-			//cout << "first: " << firstString << " second: " << secondString[i] << endl;
+		if (countChar(secondString, firstString[i]) > 0) {
+			cout << "first: " << firstString[i] << " second: " << secondString << endl;
 			counter++;
 		}
 	}
