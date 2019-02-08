@@ -14,7 +14,7 @@ int incrementByValueNumTimes(int startValue, int increment, int numTimes) {
 }
 
 
-void incrementByValueNumTimesRef(int& startValue, int& increment, int& numTimes){
+void incrementByValueNumTimesRef(int& startValue, int& increment, int& numTimes) {
 	for (int i = 0; i < numTimes; i++) {
 		startValue += increment;
 	}
@@ -53,7 +53,7 @@ void sortVector(vector<int>& sortThisVector) {
 		j = i;
 		while (j > 0 && sortThisVector[j - 1] > sortThisVector[j]) {
 			swapNumbers(sortThisVector[j], sortThisVector[j - 1]);
-				j -= 1;
+			j -= 1;
 		}
 		i += 1;
 	}
@@ -114,13 +114,13 @@ string readInputToString(int nLength) {
 
 int countChar(string thisIsTheString, char thisIsTheChar) {
 	int counter = 0;
-	for (int i = 0; i < thisIsTheString.size();i++) {
+	for (int i = 0; i < thisIsTheString.size(); i++) {
 		if ((tolower(thisIsTheString[i]) == thisIsTheChar) || (toupper(thisIsTheString[i]) == thisIsTheChar)) {
 			counter++;
 		}
 	}
 
-	cout << "countChar: " << thisIsTheString << " : " << thisIsTheChar << " : " << counter << endl;
+	//cout << "countChar: " << thisIsTheString << " : " << thisIsTheChar << " : " << counter << endl;
 	return counter;
 }
 
@@ -146,10 +146,15 @@ int checkCharacters(string firstString, string secondString) {
 	return counter;
 }
 
+/*
+###	TODO-list	###
+This function is not working properly. Sometimes it works, sometimes it return too many results.
+###	Need to rewrite this function before delivery	###
+*/
 int checkCharactersAndPosition(string firstString, string secondString) {
     int counter = 0;
-	for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 6; i++) {
         counter+=min(countChar(firstString, 'A'+i),countChar(secondString, 'A'+i));
-	}
-	return counter;
+    }
+    return counter;
 }

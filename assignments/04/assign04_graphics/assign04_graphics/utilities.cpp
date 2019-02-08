@@ -146,18 +146,10 @@ int checkCharacters(string firstString, string secondString) {
 	return counter;
 }
 
-/*
-###	TODO-list	###
-This function is not working properly. Sometimes it works, sometimes it return too many results.
-###	Need to rewrite this function before delivery	###
-*/
 int checkCharactersAndPosition(string firstString, string secondString) {
 	int counter = 0;
-	for (int i = 0; i < firstString.size(); i++) {
-		if (countChar(secondString, firstString[i]) > 0) {
-			//cout << "first: " << firstString[i] << " second: " << secondString << endl;
-			counter++;
-		}
+	for (int i = 0; i < 6; i++) {
+		counter += min(countChar(firstString, 'A' + i), countChar(secondString, 'A' + i));
 	}
 	return counter;
 }

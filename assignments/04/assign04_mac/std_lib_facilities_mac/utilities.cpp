@@ -120,7 +120,7 @@ int countChar(string thisIsTheString, char thisIsTheChar) {
 		}
 	}
 
-	cout << "countChar: " << thisIsTheString << " : " << thisIsTheChar << " : " << counter << endl;
+	//cout << "countChar: " << thisIsTheString << " : " << thisIsTheChar << " : " << counter << endl;
 	return counter;
 }
 
@@ -145,6 +145,7 @@ int checkCharacters(string firstString, string secondString) {
 	}
 	return counter;
 }
+
 
 int checkCharactersAndPosition(string firstString, string secondString) {
     int counter = 0;
