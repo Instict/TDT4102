@@ -35,3 +35,14 @@ string rankToString(Rank rank) {
 	case Rank::ace: return "ace"; break;
 	}
 }
+
+
+void toString(CardStruct cardInput) {
+	cout << rankToString(cardInput.r);
+	cout << " of ";
+	cout << suitToString(cardInput.s) << endl;
+}
+
+string toStringShort(CardStruct cardInput) {
+	return suitToString(cardInput.s).substr(0, 1) + to_string(int(cardInput.r));
+}

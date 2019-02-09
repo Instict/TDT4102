@@ -24,5 +24,12 @@ enum class Rank {
 	ace
 };
 
+struct CardStruct {
+	Suit s;
+	Rank r;
+};
+
+void toString(CardStruct cardInput);
 string suitToString(Suit stringInput);
 string rankToString(Rank rank);
+string toStringShort(CardStruct cardInput);
