@@ -3,8 +3,9 @@
 #include "utilities.h"
 #include "Card.h"
 
+constexpr int set_width = 25;
+
 void testRandomCardVersionOne() {
-	int set_width = 10;
 	cout << "###" << setw(set_width) << "testRandomCardVersionOne" << setw(set_width) << "###" << endl;
 	for (int i = 0; i < 5; i++) {
 		cout << rankToString(Rank(randomWithLimits(14, 2)));
@@ -14,14 +15,12 @@ void testRandomCardVersionOne() {
 }
 
 void testCountWithCards() {
-	int set_width = 10;
 	cout << "###" << setw(set_width) << "testCountWithCards" << setw(set_width) << "###" << endl;
 	for (int j = 2; j <= 14; j++) {
 		cout << rankToString(Rank(j)) << endl;
 	}
 }
 void testMathWithCards() {
-	int set_width = 10;
 	cout << "###" << setw(set_width) << "testMathWithCards" << setw(set_width) << "###" << endl;
 	int a = 3;
 	int b = 2;
@@ -35,7 +34,6 @@ void testMathWithCards() {
 }
 
 void testStructWithCard() {
-	int set_width = 10;
 	cout << "###" << setw(set_width) << "testStructWithCard" << setw(set_width) << "###" << endl;
 	CardStruct someCard, someOtherCard;
 
@@ -50,7 +48,6 @@ void testStructWithCard() {
 }
 
 void testStructWithShortString() {
-	int set_width = 10;
 	cout << "###" << setw(set_width) << "testStructWithShortString" << setw(set_width) << "###" << endl;
 	CardStruct someCard, someOtherCard;
 

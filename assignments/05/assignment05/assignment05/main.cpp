@@ -13,13 +13,8 @@ int main(){
 	//testMathWithCards();
 	//testStructWithCard();
 
-	//awesomeMenuComingUp();
+	awesomeMenuComingUp();
 
-	testRandomCardVersionOne();
-	testCountWithCards();
-	testMathWithCards();
-	testStructWithCard();
-	testStructWithShortString();
 
 	return 0;
 }
