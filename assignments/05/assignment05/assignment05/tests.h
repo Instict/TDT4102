@@ -5,3 +5,4 @@ void testCountWithCards();
 void testMathWithCards();
 void testStructWithCard();
 void testStructWithShortString();
+void testClassThingy();

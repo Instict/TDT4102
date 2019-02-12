@@ -24,9 +24,25 @@ enum class Rank {
 	ace
 };
 
+
 struct CardStruct {
 	Suit s;
 	Rank r;
+};
+
+class Card {
+private:
+	Suit s;
+	Rank r;
+	bool valid;
+public:
+	Card();						//	constructor
+	Card(Suit suit, Rank rank);	//	overloaded constructor
+	string suit();				//	member function
+	string rank();				//	member function
+	bool isValid();				//	member function
+	string toString();			//	member function
+	string toStringShort();		//	member function
 };
 
 void toString(CardStruct cardInput);

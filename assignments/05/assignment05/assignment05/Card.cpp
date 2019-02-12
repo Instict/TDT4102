@@ -46,3 +46,59 @@ void toString(CardStruct cardInput) {
 string toStringShort(CardStruct cardInput) {
 	return suitToString(cardInput.s).substr(0, 1) + to_string(int(cardInput.r));
 }
+
+Card::Card() {
+}
+Card::Card(Suit suit, Rank rank) {
+	s = suit;
+	r = rank;
+}
+string Card::suit() {
+	map<Suit, string>mapThingy;
+	mapThingy[Suit::hearts] = "hearts";
+	mapThingy[Suit::diamonds] = "diamonds";
+	mapThingy[Suit::clubs] = "clubs";
+	mapThingy[Suit::spades] = "spades";
+	return mapThingy[s];
+}
+string Card::rank() {
+	map<Rank, string>mapThingy;
+	mapThingy[Rank::two] = "two";
+	mapThingy[Rank::three] = "three";
+	mapThingy[Rank::four] = "four";
+	mapThingy[Rank::five] = "five";
+	mapThingy[Rank::six] = "six";
+	mapThingy[Rank::seven] = "seven";
+	mapThingy[Rank::eight] = "eight";
+	mapThingy[Rank::nine] = "nine";
+	mapThingy[Rank::ten] = "ten";
+	mapThingy[Rank::jack] = "jack";
+	mapThingy[Rank::queen] = "queen";
+	mapThingy[Rank::king] = "king";
+	mapThingy[Rank::ace] = "ace";
+	return mapThingy[r];
+}
+
+/*
+###	TO-DO LIST	###
+This function is not really working as it should. Need to look closer at how to fix it later.
+*/
+bool Card::isValid() {
+	return true;
+}
+string Card::toString() {
+	if (isValid()) {
+		return rank() + " of " + suit();
+	}
+	else {
+		return "Ugyldig kort";
+	}
+}
+string Card::toStringShort() {
+	if (isValid()) {
+		return suit().substr(0, 1) + to_string(int(r));
+	}
+	else {
+		return "Ugyldig kort";
+	}
+}

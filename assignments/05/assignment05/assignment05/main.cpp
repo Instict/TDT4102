@@ -13,8 +13,9 @@ int main(){
 	//testMathWithCards();
 	//testStructWithCard();
 
-	awesomeMenuComingUp();
+	//awesomeMenuComingUp();
 
+	testClassThingy();
 
 	return 0;
 }

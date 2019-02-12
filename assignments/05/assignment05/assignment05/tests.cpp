@@ -62,3 +62,15 @@ void testStructWithShortString() {
 	cout << toStringShort(someOtherCard) << endl;
 
 }
+
+void testClassThingy() {
+	Card newCard(Suit(randomWithLimits(3, 0)), Rank(randomWithLimits(14, 2)));
+	   
+	cout << newCard.suit() << endl;
+	cout << newCard.rank() << endl;
+
+	cout << newCard.toString() << endl;
+	cout << newCard.toStringShort() << endl;
+
+	Card anotherNewCard();
+}
