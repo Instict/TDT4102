@@ -117,6 +117,7 @@ void playBlackjack() {
 		newGame.giveDealerCard();
 		newGame.printDealer(true);
 	}
+	cout << "###" << setw(set_width) << "Game ended" << setw(set_width) << "###" << endl;
 	newGame.printTable(true);
 	newGame.printScore();
 	newGame.checkWinCondition();

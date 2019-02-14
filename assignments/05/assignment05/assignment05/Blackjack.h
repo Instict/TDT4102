@@ -9,7 +9,6 @@ class Blackjack {
 	CardDeck deckOfCards;
 public:
 	Blackjack();
-	int hand();
 	bool checkWinCondition();
 	void printDealer(bool value);
 	void printPlayer();

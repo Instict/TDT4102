@@ -22,23 +22,25 @@ void Blackjack::printTable(bool value) {
 }
 
 void Blackjack::printDealer(bool value) {
-	cout << "Dealer's hand (" << dealerScore() << ") " << endl;
+	cout << "Dealer's hand (" << dealerScore() << ") "<< endl;
 	if (value) {
 		for (int i = 0; i < dealer.size(); i++) {
-			cout << dealer[i].toStringShort() << setw(setWidth);
+			cout << setw(setWidth) << dealer[i].toStringShort();
 		}
 	}
 	else {
-			cout << dealer[0].toStringShort() << setw(setWidth);
-			cout << "xx" << setw(setWidth);
+		cout << setw(setWidth) << dealer[0].toStringShort();
+		cout << setw(setWidth) << "xx" << setw(setWidth);
 	}
+	cout << endl;
 	cout << endl;
 }
 void Blackjack::printPlayer() {
 	cout << "Player's hand (" << playerScore() << ") " << endl;
 	for (int i = 0; i < player.size(); i++) {
-		cout << player[i].toStringShort() << setw(setWidth);
+		cout << setw(setWidth) << player[i].toStringShort();
 	}
+	cout << endl;	
 	cout << endl;
 }
 int Blackjack::playerScore() {
@@ -72,11 +74,12 @@ void Blackjack::printScore() {
 	cout << "Dealer got: " << dealerScore() << " Player got: " << playerScore() << endl;
 }
 void Blackjack::givePlayerCard() {
+	cout << "Player draws a card!" << endl << endl;
 	player.push_back(deckOfCards.drawCard());
 }
 bool Blackjack::giveDealerCard() {
 	if (dealerScore() < 17) {
-		cout << "Dealer gets a card" << endl;
+		cout << "Dealer draws a card!" << endl << endl;
 		dealer.push_back(deckOfCards.drawCard());
 		return true;
 	}
