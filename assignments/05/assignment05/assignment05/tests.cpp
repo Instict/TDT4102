@@ -2,6 +2,8 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
 #include "Card.h"
+#include "CardDeck.h"
+
 
 constexpr int set_width = 25;
 
@@ -73,4 +75,19 @@ void testClassThingy() {
 	cout << newCard.toStringShort() << endl;
 
 	Card anotherNewCard();
+}
+
+void testCardDeckThingy() {
+	CardDeck newDeck;
+
+
+	newDeck.print();
+	newDeck.printShort();
+
+	cout << "everyone is shuffeling" << endl;
+	newDeck.shuffle();
+
+	newDeck.print();
+	newDeck.printShort();
+
 }

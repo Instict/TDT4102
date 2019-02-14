@@ -6,3 +6,4 @@ void testMathWithCards();
 void testStructWithCard();
 void testStructWithShortString();
 void testClassThingy();
+void testCardDeckThingy();

@@ -3,6 +3,8 @@
 #include "utilities.h"
 #include "Card.h"
 #include "tests.h"
+#include "CardDeck.h"
+
 
 int main(){
 	startRandomThingy();
@@ -13,9 +15,11 @@ int main(){
 	//testMathWithCards();
 	//testStructWithCard();
 
-	//awesomeMenuComingUp();
+	awesomeMenuComingUp();
 
-	testClassThingy();
+	//testClassThingy();
+
+
 
 	return 0;
 }

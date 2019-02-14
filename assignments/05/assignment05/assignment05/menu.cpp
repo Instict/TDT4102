@@ -15,8 +15,9 @@ void awesomeMenuComingUp() {
 			"3)testMathWithCards\n"
 			"4)testStructWithCard\n"
 			"5)testStructWithShortString\n"
-			"6)-----------------------\n"
-			"Angi valg (0-6): ";
+			"6)testClassThingy\n"
+			"7)testCardDeckThingy\n"
+			"Angi valg: ";
 		cin >> user_input;
 		switch (user_input) {
 		case 1: cout << endl; testRandomCardVersionOne(); cout << endl; break;
@@ -24,7 +25,8 @@ void awesomeMenuComingUp() {
 		case 3: cout << endl; testMathWithCards(); cout << endl; break;
 		case 4: cout << endl; testStructWithCard(); cout << endl; break;
 		case 5: cout << endl; testStructWithShortString(); cout << endl; break;
-		case 6: cout << endl; cout << "part 6"; cout << endl; break;
+		case 6: cout << endl; testClassThingy(); cout << endl; break;
+		case 7: cout << endl; testCardDeckThingy(); cout << endl; break;
 		}
 
 	} while (!(user_input == 0));

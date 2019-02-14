@@ -84,7 +84,12 @@ string Card::rank() {
 This function is not really working as it should. Need to look closer at how to fix it later.
 */
 bool Card::isValid() {
-	return true;
+	if ((&s && &r) != NULL) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 string Card::toString() {
 	if (isValid()) {
