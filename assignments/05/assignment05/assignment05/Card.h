@@ -43,6 +43,8 @@ public:
 	bool isValid();				//	member function
 	string toString();			//	member function
 	string toStringShort();		//	member function
+	Suit suitInt();
+	Rank rankInt();
 };
 
 void toString(CardStruct cardInput);

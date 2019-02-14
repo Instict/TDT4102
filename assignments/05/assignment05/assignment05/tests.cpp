@@ -3,6 +3,7 @@
 #include "utilities.h"
 #include "Card.h"
 #include "CardDeck.h"
+#include "Blackjack.h"
 
 
 constexpr int set_width = 25;
@@ -66,6 +67,8 @@ void testStructWithShortString() {
 }
 
 void testClassThingy() {
+
+	cout << "###" << setw(set_width) << "testClassThingy" << setw(set_width) << "###" << endl;
 	Card newCard(Suit(randomWithLimits(3, 0)), Rank(randomWithLimits(14, 2)));
 	   
 	cout << newCard.suit() << endl;
@@ -78,6 +81,7 @@ void testClassThingy() {
 }
 
 void testCardDeckThingy() {
+	cout << "###" << setw(set_width) << "testCardDeckThingy" << setw(set_width) << "###" << endl;
 	CardDeck newDeck;
 
 
@@ -89,5 +93,32 @@ void testCardDeckThingy() {
 
 	newDeck.print();
 	newDeck.printShort();
+
+}
+
+void playBlackjack() {
+	cout << "###" << setw(set_width) << "playBlackjack" << setw(set_width) << "###" << endl;
+	Blackjack newGame;
+	int userInput;
+	do {
+
+		newGame.printTable(false);
+		cout << "Choose action\n"
+			"0)Another card\n"
+			"1)Show score\n";
+			cin >> userInput;
+			switch (userInput) {
+			case 0: cout << endl; newGame.givePlayerCard(); cout << endl; break;
+			}
+	} while (userInput != 1 && newGame.playerScore() < 22);
+
+	newGame.printDealer(true);
+	while (newGame.dealerScore() < 17 && newGame.playerScore() < 22) {
+		newGame.giveDealerCard();
+		newGame.printDealer(true);
+	}
+	newGame.printTable(true);
+	newGame.printScore();
+	newGame.checkWinCondition();
 
 }

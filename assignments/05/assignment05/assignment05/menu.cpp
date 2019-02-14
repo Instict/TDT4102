@@ -17,6 +17,7 @@ void awesomeMenuComingUp() {
 			"5)testStructWithShortString\n"
 			"6)testClassThingy\n"
 			"7)testCardDeckThingy\n"
+			"8)Play Blackjack! \n"
 			"Angi valg: ";
 		cin >> user_input;
 		switch (user_input) {
@@ -27,8 +28,8 @@ void awesomeMenuComingUp() {
 		case 5: cout << endl; testStructWithShortString(); cout << endl; break;
 		case 6: cout << endl; testClassThingy(); cout << endl; break;
 		case 7: cout << endl; testCardDeckThingy(); cout << endl; break;
+		case 8: cout << endl; playBlackjack(); cout << endl; break;
 		}
 
 	} while (!(user_input == 0));
 }
-

@@ -78,7 +78,12 @@ string Card::rank() {
 	mapThingy[Rank::ace] = "ace";
 	return mapThingy[r];
 }
-
+Suit Card::suitInt() {
+	return s;
+}
+Rank Card::rankInt() {
+	return r;
+}
 /*
 ###	TO-DO LIST	###
 This function is not really working as it should. Need to look closer at how to fix it later.

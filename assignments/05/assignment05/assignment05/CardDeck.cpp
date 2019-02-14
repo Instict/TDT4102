@@ -7,11 +7,13 @@ CardDeck::CardDeck() {
 	cards.resize(52);
 	currentCardIndex = 0;
 	for (int i = 0; i < 4; i++) {
-		for (int j = 2; j < 15;j++) {
+		for (int j = 2; j < 15; j++) {
 			cards[currentCardIndex++] = { Suit(i), Rank(j) };
 		}
 	}
+	currentCardIndex = 0;
 }
+
 
 void CardDeck::swap(int firstIndex, int secondIndex) {
 	Card firstNum = cards.at(firstIndex);
