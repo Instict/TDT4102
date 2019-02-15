@@ -7,7 +7,7 @@ int main(){
 	isMac(false);
 
 
-	testReadAndWriteThingy();
-
+	//testReadAndWriteThingy();
+	testReadAndLineNumbers();
 	return 0;
 }

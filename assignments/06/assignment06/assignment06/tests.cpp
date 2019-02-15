@@ -23,3 +23,13 @@ void testReadAndWriteThingy() {
 	writeToFile("userText.txt");
 	readFromFile("userText.txt");
 }
+
+void testReadAndLineNumbers() {
+	readFromFile("ThisFileDoesNotExist.txt");
+
+	vector<string> comeOnFeelTheNoise;
+
+	readFromFile("old_exampleText.txt", comeOnFeelTheNoise);
+	writeToFile("new_exampleText.txt", comeOnFeelTheNoise);
+	readFromFile("new_exampleText.txt");
+}
