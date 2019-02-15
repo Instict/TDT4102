@@ -33,7 +33,7 @@ void getUserString(string& userInput) {
 	cout << endl;
 }
 
-void writeToFileUserInput(string fileName) {
+void writeToFile(string fileName) {
 	ofstream writeFile;
 	string userInput;
 	writeFile.open(pathToFile + fileName);
@@ -41,18 +41,23 @@ void writeToFileUserInput(string fileName) {
 		cout << fileName << endl;
 		getUserString(userInput);
 		if (userInput != "quit") {
-			writeFile << userInput;
+			writeFile << userInput << endl;
 			writeFile.close();
 		}
 	} while (userInput != "quit");
 }
+
+/*
+Overload function
+*/
 void writeToFile(string fileName, string inputFrom) {
 	ofstream writeFile;
 	cout << fileName << endl;
 	writeFile.open(pathToFile + fileName);			
-	writeFile << inputFrom;
+	writeFile << inputFrom << endl;
 	writeFile.close();
 }
+
 void readFromFile(string fileName) {
 	ifstream readFile;
 	string line;
