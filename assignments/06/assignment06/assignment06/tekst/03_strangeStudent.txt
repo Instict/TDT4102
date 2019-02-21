@@ -1,0 +1,6 @@
+1 - First course
+2 - Second course
+3 - Third course
+TDT4102 - Prosedyre- og objektorientert programmering
+TDT4110 - Informasjonsteknologi grunnkurs
+TMA4100 - Matematikk 1.
