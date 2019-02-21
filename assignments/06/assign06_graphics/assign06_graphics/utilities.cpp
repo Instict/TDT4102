@@ -1,11 +1,10 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
-#include "CourseCatalog.h"
 #include "Temperatures.h"
 string pathToFile;
 
 void isMac(bool isMac) {
-	isMacCourseCatalog(isMac);
+	//isMacCourseCatalog(isMac);
 	isMacTemperatures(isMac);
 	if (isMac) {
 		cout << "pathToFile changed to nothing" << endl;

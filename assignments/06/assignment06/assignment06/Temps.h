@@ -9,3 +9,5 @@ public:
 };
 
 istream& operator>>(istream& is, Temps& t);
+vector<Temps> tempsObjects();
+void isMacTemps(bool isMac);

@@ -2,26 +2,16 @@
 #include "utilities.h"
 #include "tests.h"
 #include "menu.h"
+#include "Temperatures.h"
 
 int main(){
-	int userChoice;
-	do {
-		cout << "1) windows" << endl;
-		cout << "2) mac" << endl;
-		cout << "User choice: ";
-		cin >> userChoice;
-		cout << endl;
-		if (userChoice == 1) {
-			isMac(false);
-			break;
-		}
-		if (userChoice == 2) {
-			isMac(true);
-			break;
-		}
-	} while (userChoice != 1);
 	initAssignment();
-	
+	//isMac(false);
+	testIsMac();
+
+	awesomeMenuComingUp();
+
+	//testReadTemperatures();
 
 	/*
 	ifstream temp_file{ "tekst\\grunnlov.txt" };
@@ -46,6 +36,5 @@ int main(){
 	//testWriteToFile();
 	//testReadFromFile();
 	//readFromFile("new_exampleText.txt", false);
-	awesomeMenuComingUp();
 	return 0;
 }

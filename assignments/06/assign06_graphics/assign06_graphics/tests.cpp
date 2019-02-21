@@ -1,7 +1,6 @@
 #include "tests.h"
 #include "std_lib_facilities.h"
 #include "utilities.h"
-#include "CourseCatalog.h"
 #include "Temperatures.h"
 
 constexpr int set_width = 25;
@@ -67,7 +66,7 @@ void testCountConstitution() {
 
 	countChar("grunnlov.txt", 'F', 'Z');
 }
-
+/*
 void testAddCourses() {
 	cout << "###" << setw(set_width) << "testAddCourses" << setw(set_width) << "###" << endl;
 
@@ -99,10 +98,7 @@ void testOperator() {
 	cout << "Change TDT4102" << endl;
 	freshStudent.addCourse("TDT4102", "C++");
 	cout << freshStudent;
-	/*
-	freshStudent.addCourseInsert("TDT4102", "B++");
-	cout << freshStudent;
-	*/
+
 
 }
 void testWriteToFile() {
@@ -128,6 +124,7 @@ void testReadFromFile() {
 	freshStudent.readFromFiles("03_strangeStudent.txt");
 	cout << freshStudent;
 }
+*/
 void testReadTemperatures() {
 	cout << "###" << setw(set_width) << "testReadTemperatures" << setw(set_width) << "###" << endl;
 
