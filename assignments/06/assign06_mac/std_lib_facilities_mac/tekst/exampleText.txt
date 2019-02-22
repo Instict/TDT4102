@@ -1,0 +1,5 @@
+Definer en funksjon som leser fra en tekstfil,
+og lager en ny fil med den samme teksten
+og har linjenummer som forste tegn i hver linje.
+Sorg for at programmet ditt sjekker for
+vanlige feil som at filen ikke eksisterer.

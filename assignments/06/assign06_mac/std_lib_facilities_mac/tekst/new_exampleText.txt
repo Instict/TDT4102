@@ -1,0 +1,6 @@
+1: Definer en funksjon som leser fra en tekstfil,
+2: og lager en ny fil med den samme teksten
+3: og har linjenummer som første tegn i hver linje.
+4: Sørg for at programmet ditt sjekker for
+5: vanlige feil som at filen ikke eksisterer.
+6: 
