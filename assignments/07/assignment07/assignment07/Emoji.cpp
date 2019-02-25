@@ -2,15 +2,6 @@
 #include "std_lib_facilities.h"
 #include "Graph.h"
 #include "GUI.h"
-#include "Simple_window.h"
-
-
-constexpr int xmax = 1000;
-constexpr int ymax = xmax;
-constexpr int emojiRadius = 50;
-const Point tl{ 100, 100 };
-const string win_label{ "Emoji factory" };
-
 
 Face::Face(Point center, int radius) : faceEmoji{ {center},radius }{
 	faceEmoji.set_color(Color::white);
