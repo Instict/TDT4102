@@ -2,7 +2,7 @@
 #include "Car.h"
 #include "std_lib_facilities.h"
 #include "Person.h"
-
+#include "Meeting.h"
 
 void testReserveSeats() {
 	int seats = 2;
@@ -25,4 +25,30 @@ void testPersonAndCar() {
 
 	secondRandom.setName("Karl Normann");
 	cout << secondRandom << endl;
+}
+
+void testMeetingAndOperator() {
+	Car kariCar(3);
+	Car olaCar(2);
+	Car hansCar(0);
+
+
+	Person leader("Ola Normann", "ola@norman.no", &olaCar);
+	Person perKari("Kari Normann", "kari@normann.no", &kariCar);
+	Person perHans("Hans Normann", "hans@normann.no", &hansCar);
+
+	int day = 1;
+	int startTime = 10;
+	int endTime = 12;
+	Campus location = Campus::Gloshaugen;
+	string subject = "First meeting";
+
+	Meeting m(day, startTime, endTime, location, subject, &leader);
+
+
+	m.addParticipant(&leader);
+	m.addParticipant(&perKari);
+	m.addParticipant(&perHans);
+	cout << "---" << endl;
+	cout << m << endl;
 }

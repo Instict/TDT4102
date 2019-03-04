@@ -4,8 +4,10 @@
 #include "Car.h"
 #include "tests.h"
 #include "Person.h"
-
+#include "Meeting.h"
 int main() {
+	setlocale(LC_ALL, "norwegian");
+
 	/*
 	using namespace Graph_lib;
 	
@@ -24,7 +26,30 @@ int main() {
 	*/
 
 	//testReserveSeats();
-	testPersonAndCar();
+	//testPersonAndCar();
+	Car kariCar(3);
+	Car olaCar(2);
+	Car hansCar(0);
+
+
+	Person leader("Ola Normann", "ola@norman.no", &olaCar);
+	Person perKari("Kari Normann", "kari@normann.no", &kariCar);
+	Person perHans("Hans Normann", "hans@normann.no", &hansCar);
+
+	int day = 1;
+	int startTime = 10;
+	int endTime = 12;
+	Campus location = Campus::Gloshaugen;
+	string subject = "First meeting";
+
+	Meeting m(day, startTime, endTime, location, subject, &leader);
+	
+
+	m.addParticipant(&leader);
+	m.addParticipant(&perKari);
+	m.addParticipant(&perHans);
+	cout << "---" << endl;
+	cout << m << endl;
 
 }
 

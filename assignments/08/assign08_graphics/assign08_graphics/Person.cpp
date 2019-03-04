@@ -16,10 +16,10 @@ Person::Person(string name, string email, Car* car = nullptr) :
 	car{ car }
 {}
 
-string Person::getName() {
+string Person::getName() const{
 	return name;
 }
-string Person::getEmail() {
+string Person::getEmail() const{
 	return email;
 }
 void Person::setName(string name) {

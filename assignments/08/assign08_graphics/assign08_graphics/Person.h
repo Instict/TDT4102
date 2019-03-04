@@ -11,8 +11,8 @@ public:
 	Person();
 	Person(string name, string email, Car* car);
 	~Person();
-	string getName();
-	string getEmail();
+	string getName() const;
+	string getEmail() const;
 	void setName(string name);
 	void setEmail(string email);
 	bool hasAvailableSeats() const;
