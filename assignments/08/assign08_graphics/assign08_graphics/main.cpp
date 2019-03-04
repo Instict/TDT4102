@@ -3,6 +3,7 @@
 #include "Simple_window.h" 
 #include "Car.h"
 #include "tests.h"
+#include "Person.h"
 
 int main() {
 	/*
@@ -22,7 +23,8 @@ int main() {
 	win.wait_for_button();
 	*/
 
-	testReserveSeats();
+	//testReserveSeats();
+	testPersonAndCar();
 
 }
 
