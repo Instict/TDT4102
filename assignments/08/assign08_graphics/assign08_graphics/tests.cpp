@@ -3,7 +3,7 @@
 #include "std_lib_facilities.h"
 #include "Person.h"
 #include "Meeting.h"
-
+#include "MeetingWindow.h"
 void testReserveSeats() {
 	int seats = 2;
 	Car sportsCar(seats);
@@ -105,4 +105,36 @@ void testCoDriving() {
 	for (auto name : m2.findPotentialCoDriving()) {
 		cout << name->getName() << " from: " << m2.getSubject() << endl;
 	}
+}
+
+void testGUI() {
+	using namespace Graph_lib;
+	int width = 600;
+	int height = 300;
+	MeetingWindow newWindow({ 550,80 }, width, height, "Hello world!");
+
+	gui_main();
+}
+
+void awesomeMenuComingUp() {
+	int user_input;
+	do {
+		cout << "\nVelg funksjon:\n"
+			"0)Avslutt\n"
+			"1)testReserveSeats\n"
+			"2)testPersonAndCar\n"
+			"3)testMeetingAndOperator\n"
+			"4)testCoDriving\n"
+			"5)testGUI\n"
+			"Angi valg: ";
+		cin >> user_input;
+		switch (user_input) {
+		case 1: cout << endl; testReserveSeats(); cout << endl; break;
+		case 2: cout << endl; testPersonAndCar(); cout << endl; break;
+		case 3: cout << endl; testMeetingAndOperator(); cout << endl; break;
+		case 4: cout << endl; testCoDriving(); cout << endl; break;
+		case 5: cout << endl; testGUI(); cout << endl; break;
+		}
+
+	} while (!(user_input == 0));
 }
