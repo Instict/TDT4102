@@ -33,6 +33,8 @@ public:
 	const Person* getLeader() const;
 	void addParticipant(Person* participant);
 	vector<string> getParticipantList() const;
+	vector<const Person*> findPotentialCoDriving() const;
+	set<const Person*> getParticipants() const;
 };
 
 

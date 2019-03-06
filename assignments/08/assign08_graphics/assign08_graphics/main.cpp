@@ -27,29 +27,11 @@ int main() {
 
 	//testReserveSeats();
 	//testPersonAndCar();
-	Car kariCar(3);
-	Car olaCar(2);
-	Car hansCar(0);
-
-
-	Person leader("Ola Normann", "ola@norman.no", &olaCar);
-	Person perKari("Kari Normann", "kari@normann.no", &kariCar);
-	Person perHans("Hans Normann", "hans@normann.no", &hansCar);
-
-	int day = 1;
-	int startTime = 10;
-	int endTime = 12;
-	Campus location = Campus::Gloshaugen;
-	string subject = "First meeting";
-
-	Meeting m(day, startTime, endTime, location, subject, &leader);
-	
-
-	m.addParticipant(&leader);
-	m.addParticipant(&perKari);
-	m.addParticipant(&perHans);
-	cout << "---" << endl;
-	cout << m << endl;
-
+	testCoDriving();
+	/*
+	for (int i = 0; i < m.findPotentialCoDriving().size(); i++) {
+		cout << m.findPotentialCoDriving[i] << endl;
+	}
+	*/
 }
 
